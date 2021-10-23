@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router';
 
 import publicRoutes from './publicRoutes';
 
-const MergeRoute = () => {
+const Router = () => {
   return (
     <Routes>
       {publicRoutes.map(({ path, component: Component }) => (
@@ -14,4 +14,4 @@ const MergeRoute = () => {
   );
 };
 
-export default MergeRoute;
+export default Router;

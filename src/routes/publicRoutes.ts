@@ -1,30 +1,24 @@
 import React from 'react';
-import { Route } from '../types/router.type';
+import { Route } from '../types/router.types';
 
-const Home = React.lazy(
-  () =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "home" */ '../pages/Home'
-    ),
+const IndexPage = React.lazy(
+  () => import(/* webpackPrefetch: true*/ '../pages/index'),
 );
 
-const Error = React.lazy(
-  () =>
-    import(
-      /* webpackPrefetch: true, webpackChunkName: "error" */ '../pages/Error'
-    ),
+const NotFoundPage = React.lazy(
+  () => import(/* webpackPrefetch: true */ '../pages/404'),
 );
 
 const routes: Route[] = [
   {
     name: 'Trang chủ',
     path: '/',
-    component: Home,
+    component: IndexPage,
   },
   {
-    name: 'Không tìm thấy trang',
+    name: 'Cineflex',
     path: '*',
-    component: Error,
+    component: NotFoundPage,
   },
 ];
 
